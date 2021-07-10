@@ -3,16 +3,18 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		4D5B908C26998167005555B8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5B908B26998167005555B8 /* AppDelegate.swift */; };
 		4D5B908E26998167005555B8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5B908D26998167005555B8 /* SceneDelegate.swift */; };
-		4D5B909026998167005555B8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5B908F26998167005555B8 /* ViewController.swift */; };
 		4D5B909326998167005555B8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D5B909126998167005555B8 /* Main.storyboard */; };
 		4D5B909526998168005555B8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D5B909426998168005555B8 /* Assets.xcassets */; };
 		4D5B909826998168005555B8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D5B909626998168005555B8 /* LaunchScreen.storyboard */; };
+		4D5B90AA269988AD005555B8 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5B90A9269988AD005555B8 /* Movie.swift */; };
+		4D5B90AC26998DB3005555B8 /* MovieViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5B90AB26998DB3005555B8 /* MovieViewModel.swift */; };
+		4D5B90AE26998DC5005555B8 /* MovieListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5B90AD26998DC5005555B8 /* MovieListViewModel.swift */; };
 		51D236AADFA8AC5E3FFE2396 /* Pods_KumuSkillTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7599F571710656C183455D9A /* Pods_KumuSkillTest.framework */; };
 /* End PBXBuildFile section */
 
@@ -22,11 +24,13 @@
 		4D5B908826998167005555B8 /* KumuSkillTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KumuSkillTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D5B908B26998167005555B8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4D5B908D26998167005555B8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		4D5B908F26998167005555B8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		4D5B909226998167005555B8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4D5B909426998168005555B8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4D5B909726998168005555B8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4D5B909926998168005555B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4D5B90A9269988AD005555B8 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		4D5B90AB26998DB3005555B8 /* MovieViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieViewModel.swift; sourceTree = "<group>"; };
+		4D5B90AD26998DC5005555B8 /* MovieListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListViewModel.swift; sourceTree = "<group>"; };
 		7599F571710656C183455D9A /* Pods_KumuSkillTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KumuSkillTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -71,15 +75,89 @@
 		4D5B908A26998167005555B8 /* KumuSkillTest */ = {
 			isa = PBXGroup;
 			children = (
-				4D5B908B26998167005555B8 /* AppDelegate.swift */,
-				4D5B908D26998167005555B8 /* SceneDelegate.swift */,
-				4D5B908F26998167005555B8 /* ViewController.swift */,
-				4D5B909126998167005555B8 /* Main.storyboard */,
-				4D5B909426998168005555B8 /* Assets.xcassets */,
-				4D5B909626998168005555B8 /* LaunchScreen.storyboard */,
-				4D5B909926998168005555B8 /* Info.plist */,
+				4D5B90A5269987A8005555B8 /* Views */,
+				4D5B90A426998798005555B8 /* ViewControllers */,
+				4D5B90A326998789005555B8 /* Services */,
+				4D5B90A226998780005555B8 /* ViewModels */,
+				4D5B90A12699877B005555B8 /* Models */,
+				4D5B90A026998777005555B8 /* Routes */,
+				4D5B909F26998757005555B8 /* Core */,
 			);
 			path = KumuSkillTest;
+			sourceTree = "<group>";
+		};
+		4D5B909F26998757005555B8 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				4D5B909926998168005555B8 /* Info.plist */,
+				4D5B908B26998167005555B8 /* AppDelegate.swift */,
+				4D5B908D26998167005555B8 /* SceneDelegate.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		4D5B90A026998777005555B8 /* Routes */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Routes;
+			sourceTree = "<group>";
+		};
+		4D5B90A12699877B005555B8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4D5B90A9269988AD005555B8 /* Movie.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		4D5B90A226998780005555B8 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				4D5B90AB26998DB3005555B8 /* MovieViewModel.swift */,
+				4D5B90AD26998DC5005555B8 /* MovieListViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		4D5B90A326998789005555B8 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		4D5B90A426998798005555B8 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		4D5B90A5269987A8005555B8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4D5B90A7269987BC005555B8 /* Assets */,
+				4D5B90A6269987AE005555B8 /* Storyboards */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		4D5B90A6269987AE005555B8 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				4D5B909126998167005555B8 /* Main.storyboard */,
+				4D5B909626998168005555B8 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		4D5B90A7269987BC005555B8 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				4D5B909426998168005555B8 /* Assets.xcassets */,
+			);
+			path = Assets;
 			sourceTree = "<group>";
 		};
 		7E5FDB3D6472C0061B6DC4C8 /* Pods */ = {
@@ -88,7 +166,6 @@
 				23B21858BA4BBE1CD6D9FF55 /* Pods-KumuSkillTest.debug.xcconfig */,
 				042557AA0499953B7A8131AF /* Pods-KumuSkillTest.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -206,9 +283,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4D5B909026998167005555B8 /* ViewController.swift in Sources */,
 				4D5B908C26998167005555B8 /* AppDelegate.swift in Sources */,
 				4D5B908E26998167005555B8 /* SceneDelegate.swift in Sources */,
+				4D5B90AA269988AD005555B8 /* Movie.swift in Sources */,
+				4D5B90AC26998DB3005555B8 /* MovieViewModel.swift in Sources */,
+				4D5B90AE26998DC5005555B8 /* MovieListViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -358,7 +437,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Y9XY5ZV3YG;
-				INFOPLIST_FILE = KumuSkillTest/Info.plist;
+				INFOPLIST_FILE = KumuSkillTest/Core/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -378,7 +457,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Y9XY5ZV3YG;
-				INFOPLIST_FILE = KumuSkillTest/Info.plist;
+				INFOPLIST_FILE = KumuSkillTest/Core/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
