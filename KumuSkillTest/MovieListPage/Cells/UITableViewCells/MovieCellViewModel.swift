@@ -12,6 +12,6 @@ class MovieCellViewModel: ItemTableViewCellModel {
         let formattedPrice = "\(movie.currency) \(movie.trackPrice)"
         let artworkImageUrl = URL(string: movie.artworkStringUrl)
 
-        super.init(name: movie.trackName, price: formattedPrice, genre: movie.genre, artworkImageUrl: artworkImageUrl)
+        super.init(name: movie.trackName, price: formattedPrice, genre: movie.genre, artworkImageUrl: artworkImageUrl, longDescription: movie.longDescription)
     }
 }

@@ -30,6 +30,9 @@
 		4D5B90E22699BC83005555B8 /* APIConfigurationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5B90E12699BC83005555B8 /* APIConfigurationProtocol.swift */; };
 		4D5B90E52699C785005555B8 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 4D5B90E42699C785005555B8 /* RxCocoa */; };
 		4D5B90E72699C785005555B8 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 4D5B90E62699C785005555B8 /* RxSwift */; };
+		4D5B90EC2699D667005555B8 /* ItemDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5B90EB2699D667005555B8 /* ItemDetailViewController.swift */; };
+		4D5B90EE2699D67C005555B8 /* ItemDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5B90ED2699D67C005555B8 /* ItemDetailViewModel.swift */; };
+		4D5B90F02699D913005555B8 /* AppStoryBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5B90EF2699D913005555B8 /* AppStoryBoard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +57,9 @@
 		4D5B90DD2699BB0B005555B8 /* SearchRoutes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRoutes.swift; sourceTree = "<group>"; };
 		4D5B90DF2699BB9D005555B8 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		4D5B90E12699BC83005555B8 /* APIConfigurationProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConfigurationProtocol.swift; sourceTree = "<group>"; };
+		4D5B90EB2699D667005555B8 /* ItemDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailViewController.swift; sourceTree = "<group>"; };
+		4D5B90ED2699D67C005555B8 /* ItemDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailViewModel.swift; sourceTree = "<group>"; };
+		4D5B90EF2699D913005555B8 /* AppStoryBoard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoryBoard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,8 +96,9 @@
 		4D5B908A26998167005555B8 /* KumuSkillTest */ = {
 			isa = PBXGroup;
 			children = (
+				4D5B90E82699D61C005555B8 /* MovieDetailPage */,
 				4D5B90D62699B854005555B8 /* Services */,
-				4D5B90C62699A6F4005555B8 /* MovieList */,
+				4D5B90C62699A6F4005555B8 /* MovieListPage */,
 				4D5B90A5269987A8005555B8 /* Views */,
 				4D5B90A12699877B005555B8 /* Models */,
 				4D5B909F26998757005555B8 /* Core */,
@@ -108,6 +115,7 @@
 				4D5B908B26998167005555B8 /* AppDelegate.swift */,
 				4D5B908D26998167005555B8 /* SceneDelegate.swift */,
 				4D5B90DF2699BB9D005555B8 /* Constants.swift */,
+				4D5B90EF2699D913005555B8 /* AppStoryBoard.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -181,13 +189,13 @@
 			path = Enums;
 			sourceTree = "<group>";
 		};
-		4D5B90C62699A6F4005555B8 /* MovieList */ = {
+		4D5B90C62699A6F4005555B8 /* MovieListPage */ = {
 			isa = PBXGroup;
 			children = (
 				4D5B90C72699A739005555B8 /* Cells */,
 				4D5B90A426998798005555B8 /* ViewControllers */,
 			);
-			path = MovieList;
+			path = MovieListPage;
 			sourceTree = "<group>";
 		};
 		4D5B90C72699A739005555B8 /* Cells */ = {
@@ -240,6 +248,23 @@
 				4D5B90DD2699BB0B005555B8 /* SearchRoutes.swift */,
 			);
 			path = Routes;
+			sourceTree = "<group>";
+		};
+		4D5B90E82699D61C005555B8 /* MovieDetailPage */ = {
+			isa = PBXGroup;
+			children = (
+				4D5B90E92699D62E005555B8 /* ViewControllers */,
+			);
+			path = MovieDetailPage;
+			sourceTree = "<group>";
+		};
+		4D5B90E92699D62E005555B8 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				4D5B90EB2699D667005555B8 /* ItemDetailViewController.swift */,
+				4D5B90ED2699D67C005555B8 /* ItemDetailViewModel.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -334,7 +359,10 @@
 				4D5B90C42699A42C005555B8 /* ItemType.swift in Sources */,
 				4D5B90DB2699B8E9005555B8 /* AppError.swift in Sources */,
 				4D5B90E22699BC83005555B8 /* APIConfigurationProtocol.swift in Sources */,
+				4D5B90F02699D913005555B8 /* AppStoryBoard.swift in Sources */,
+				4D5B90EC2699D667005555B8 /* ItemDetailViewController.swift in Sources */,
 				4D5B90CD2699B45D005555B8 /* MovieListViewModel.swift in Sources */,
+				4D5B90EE2699D67C005555B8 /* ItemDetailViewModel.swift in Sources */,
 				4D5B90BB26999E7A005555B8 /* ItemTableViewCellModel.swift in Sources */,
 				4D5B90E02699BB9D005555B8 /* Constants.swift in Sources */,
 				4D5B90C12699A2A3005555B8 /* BaseCellViewModel.swift in Sources */,

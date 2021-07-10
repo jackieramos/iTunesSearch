@@ -78,6 +78,12 @@ extension MovieListViewController: UITableViewDelegate, UITableViewDataSource {
         cell.bind(cellViewModel: self.viewModel.movies.value[indexPath.row])
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let itemDetailVc = ItemDetailViewController.instantiate(fromAppStoryboard: .main)
+        itemDetailVc.viewModel =  ItemDetailViewModel(item: self.viewModel.movies.value[indexPath.row])
+        self.navigationController?.pushViewController(itemDetailVc, animated: true)
+    }
 }
 
 //MARK: - UISearchBarDelegate
