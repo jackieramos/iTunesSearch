@@ -1,6 +1,7 @@
 {
-  "colors" : [
+  "images" : [
     {
+      "filename" : "genre-icon.png",
       "idiom" : "universal"
     }
   ],
