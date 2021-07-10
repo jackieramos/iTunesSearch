@@ -6,16 +6,30 @@
 //
 
 import Foundation
+import RxCocoa
+import RxSwift
 
 class MovieListViewModel {
     
-    var movies: [MovieCellViewModel] = []
+    var movies: BehaviorRelay<[MovieCellViewModel]> = BehaviorRelay(value: [])
     
-    init(movies: [MovieCellViewModel]) {
-        self.movies = movies
-    }
+    let disposeBag = DisposeBag()
     
     var cellIdentifier: String {
         return "ItemTableViewCell"
+    }
+}
+
+//MARK: - API call
+extension MovieListViewModel {
+    func searchItems(term: String, countryCode: String, media: String) {
+        APIManager.searchItems(term: term, countryCode: countryCode, media: media, completion: { response in
+            switch response {
+            case .success(let movieList):
+                self.movies.accept(movieList.movies.map({MovieCellViewModel(movie: $0)}))
+            case .failure(let error):
+                print(error.debugDescription)
+            }
+        })
     }
 }

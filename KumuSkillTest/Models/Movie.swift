@@ -30,7 +30,7 @@ struct Movie: Decodable {
     enum CodingKeys: String, CodingKey {
         case trackId
         case trackName
-        case artworkStringUrl = "artworkUrl60"
+        case artworkStringUrl = "artworkUrl100"
         case genre = "primaryGenreName"
         case trackPrice
         case currency

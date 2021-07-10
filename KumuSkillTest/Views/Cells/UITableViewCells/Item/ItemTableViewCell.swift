@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class ItemTableViewCell: UITableViewCell {
 
@@ -23,6 +24,9 @@ class ItemTableViewCell: UITableViewCell {
     func bind(cellViewModel: BaseCellViewModel) {
         guard let itemCellViewModel = cellViewModel as? ItemTableViewCellModel else { return }
         
-        
+        self.artworkImageView.kf.setImage(with: itemCellViewModel.artworkImageUrl, placeholder: UIImage(named: "placeholder"), options: nil, completionHandler: nil)
+        self.trackNameLabel.text = itemCellViewModel.title
+        self.priceLabel.text = itemCellViewModel.formattedPrice
+        self.genreLabel.text = itemCellViewModel.genre
     }
 }
