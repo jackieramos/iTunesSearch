@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1KU-G0-Oja">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="jhg-cz-HdB">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
@@ -16,17 +16,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="8AZ-M0-dyX">
-                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="m8J-Xn-t19"/>
-                                </constraints>
-                                <textInputTraits key="textInputTraits"/>
-                                <scopeButtonTitles>
-                                    <string>Title</string>
-                                    <string>Title</string>
-                                </scopeButtonTitles>
-                            </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="awi-MP-4g4">
                                 <rect key="frame" x="0.0" y="88" width="414" height="808"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -40,24 +29,77 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="awi-MP-4g4" secondAttribute="bottom" id="BAa-Ik-5MN"/>
-                            <constraint firstItem="dFk-3j-XyP" firstAttribute="trailing" secondItem="8AZ-M0-dyX" secondAttribute="trailing" id="E1J-nD-w8P"/>
                             <constraint firstAttribute="trailing" secondItem="awi-MP-4g4" secondAttribute="trailing" id="LzA-Rl-NfA"/>
-                            <constraint firstItem="8AZ-M0-dyX" firstAttribute="leading" secondItem="zBS-b4-W6o" secondAttribute="leading" id="d8d-cb-fT0"/>
-                            <constraint firstItem="awi-MP-4g4" firstAttribute="top" secondItem="8AZ-M0-dyX" secondAttribute="bottom" id="dab-Cz-kMP"/>
-                            <constraint firstItem="8AZ-M0-dyX" firstAttribute="top" secondItem="dFk-3j-XyP" secondAttribute="top" id="lwa-RP-LDJ"/>
+                            <constraint firstItem="awi-MP-4g4" firstAttribute="top" secondItem="dFk-3j-XyP" secondAttribute="top" id="fj6-nn-F3j"/>
                             <constraint firstItem="awi-MP-4g4" firstAttribute="leading" secondItem="dFk-3j-XyP" secondAttribute="leading" id="zfi-r2-a8L"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="mMB-Fz-frc"/>
                     <connections>
                         <outlet property="moviesTableView" destination="awi-MP-4g4" id="9Ca-qS-Yr6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8gL-gh-bjA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-836.23188405797111" y="47.544642857142854"/>
+            <point key="canvasLocation" x="984.05797101449286" y="47.544642857142854"/>
+        </scene>
+        <!--Items-->
+        <scene sceneID="9Mh-Sb-VKB">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Q0G-EU-CDv" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Items" image="list.star" catalog="system" id="Z5e-QN-Ryv"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="5eZ-dy-cak">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="1KU-G0-Oja" kind="relationship" relationship="rootViewController" id="Et6-w5-fHM"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="e3S-LB-QeB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="247.82608695652175" y="47.544642857142854"/>
+        </scene>
+        <!--Favorites-->
+        <scene sceneID="3WL-23-FoC">
+            <objects>
+                <viewController id="kRr-qc-6lj" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZUD-B9-nvF">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="bao-Xf-6jO"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Favorites" image="star.fill" catalog="system" id="iXv-6L-IwL"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2Lk-gT-SMg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="248" y="722"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="NIw-s4-NSm">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="jhg-cz-HdB" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="LBn-mQ-rpb">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="Q0G-EU-CDv" kind="relationship" relationship="viewControllers" id="oTy-5B-eim"/>
+                        <segue destination="kRr-qc-6lj" kind="relationship" relationship="viewControllers" id="1Td-os-LV7"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bGT-fz-qea" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-662.31884057971024" y="47.544642857142854"/>
         </scene>
     </scenes>
     <resources>
+        <image name="list.star" catalog="system" width="128" height="94"/>
+        <image name="star.fill" catalog="system" width="128" height="116"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
