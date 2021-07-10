@@ -33,6 +33,7 @@
 		4D5B90EC2699D667005555B8 /* ItemDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5B90EB2699D667005555B8 /* ItemDetailViewController.swift */; };
 		4D5B90EE2699D67C005555B8 /* ItemDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5B90ED2699D67C005555B8 /* ItemDetailViewModel.swift */; };
 		4D5B90F02699D913005555B8 /* AppStoryBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5B90EF2699D913005555B8 /* AppStoryBoard.swift */; };
+		4D5B90F22699E430005555B8 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5B90F12699E430005555B8 /* BaseTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +61,7 @@
 		4D5B90EB2699D667005555B8 /* ItemDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailViewController.swift; sourceTree = "<group>"; };
 		4D5B90ED2699D67C005555B8 /* ItemDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailViewModel.swift; sourceTree = "<group>"; };
 		4D5B90EF2699D913005555B8 /* AppStoryBoard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoryBoard.swift; sourceTree = "<group>"; };
+		4D5B90F12699E430005555B8 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,7 +169,7 @@
 		4D5B90B226999505005555B8 /* UITableViewCells */ = {
 			isa = PBXGroup;
 			children = (
-				4D5B90C92699B0BF005555B8 /* Item */,
+				4D5B90C92699B0BF005555B8 /* ItemTableViewCell */,
 			);
 			path = UITableViewCells;
 			sourceTree = "<group>";
@@ -175,6 +177,7 @@
 		4D5B90BF2699A291005555B8 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				4D5B90F12699E430005555B8 /* BaseTableViewCell.swift */,
 				4D5B90C02699A2A3005555B8 /* BaseCellViewModel.swift */,
 				4D5B90B226999505005555B8 /* UITableViewCells */,
 			);
@@ -214,14 +217,14 @@
 			path = UITableViewCells;
 			sourceTree = "<group>";
 		};
-		4D5B90C92699B0BF005555B8 /* Item */ = {
+		4D5B90C92699B0BF005555B8 /* ItemTableViewCell */ = {
 			isa = PBXGroup;
 			children = (
 				4D5B90B526999574005555B8 /* ItemTableViewCell.swift */,
 				4D5B90B626999574005555B8 /* ItemTableViewCell.xib */,
 				4D5B90BA26999E7A005555B8 /* ItemTableViewCellModel.swift */,
 			);
-			path = Item;
+			path = ItemTableViewCell;
 			sourceTree = "<group>";
 		};
 		4D5B90D62699B854005555B8 /* Services */ = {
@@ -352,6 +355,7 @@
 				4D5B908C26998167005555B8 /* AppDelegate.swift in Sources */,
 				4D5B90CB2699B363005555B8 /* MovieCellViewModel.swift in Sources */,
 				4D5B908E26998167005555B8 /* SceneDelegate.swift in Sources */,
+				4D5B90F22699E430005555B8 /* BaseTableViewCell.swift in Sources */,
 				4D5B90B726999574005555B8 /* ItemTableViewCell.swift in Sources */,
 				4D5B90D82699B864005555B8 /* APIManager.swift in Sources */,
 				4D5B90AA269988AD005555B8 /* Movie.swift in Sources */,

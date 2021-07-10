@@ -8,10 +8,19 @@
 import Foundation
 
 class MovieCellViewModel: ItemTableViewCellModel {
+    
+    var movie: Movie!
+    
     init(movie: Movie) {
+        self.movie = movie
+        
         let formattedPrice = "\(movie.currency) \(movie.trackPrice)"
         let artworkImageUrl = URL(string: movie.artworkStringUrl)
 
-        super.init(name: movie.trackName, price: formattedPrice, genre: movie.genre, artworkImageUrl: artworkImageUrl, longDescription: movie.longDescription)
+        super.init(name: movie.trackName, price: formattedPrice, genre: movie.genre, artworkImageUrl: artworkImageUrl)
+    }
+    
+    override var longDescription: String {
+        return self.movie.longDescription
     }
 }

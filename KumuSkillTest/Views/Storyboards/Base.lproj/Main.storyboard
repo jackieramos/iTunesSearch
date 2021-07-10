@@ -237,9 +237,16 @@
                             <constraint firstItem="bYN-ZD-qO9" firstAttribute="leading" secondItem="kXS-QZ-PNs" secondAttribute="leading" id="xy9-er-rhB"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Item Details" id="dqz-8E-3LM"/>
+                    <navigationItem key="navigationItem" title="Item Details" id="dqz-8E-3LM">
+                        <barButtonItem key="rightBarButtonItem" image="star.fill" catalog="system" id="83D-l3-pvx">
+                            <connections>
+                                <action selector="didClickFavoriteButton:" destination="U01-Mk-9yi" id="V98-D2-YGz"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="artworkImageView" destination="RWf-lC-IGk" id="xgc-qN-XOx"/>
+                        <outlet property="favoriteButton" destination="83D-l3-pvx" id="fei-rc-gxj"/>
                         <outlet property="genreLabel" destination="nXV-Vf-IL7" id="emr-fk-s6E"/>
                         <outlet property="longDescriptionLabel" destination="bYN-ZD-qO9" id="wjx-EG-W5G"/>
                         <outlet property="nameLabel" destination="bD7-ix-sKG" id="iKB-u7-fPA"/>

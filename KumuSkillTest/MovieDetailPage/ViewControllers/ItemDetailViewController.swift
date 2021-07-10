@@ -15,6 +15,7 @@ class ItemDetailViewController: UIViewController {
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var genreLabel: UILabel!
     @IBOutlet weak var longDescriptionLabel: UILabel!
+    @IBOutlet weak var favoriteButton: UIBarButtonItem!
     
     var viewModel: ItemDetailViewModel!
     
@@ -32,5 +33,9 @@ class ItemDetailViewController: UIViewController {
         self.priceLabel.text = item.subTitle
         self.genreLabel.text = item.genre
         self.longDescriptionLabel.text = item.longDescription
+    }
+    
+    @IBAction func didClickFavoriteButton(_ sender: Any) {
+        print("Add to Fav")
     }
 }

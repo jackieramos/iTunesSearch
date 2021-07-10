@@ -8,7 +8,7 @@
 import UIKit
 import Kingfisher
 
-class ItemTableViewCell: UITableViewCell {
+class ItemTableViewCell: BaseTableViewCell {
 
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var artworkImageView: UIImageView!
@@ -21,7 +21,7 @@ class ItemTableViewCell: UITableViewCell {
         // Initialization code
     }
     
-    func bind(cellViewModel: BaseCellViewModel) {
+    override func bind(cellViewModel: BaseCellViewModel) {
         guard let itemCellViewModel = cellViewModel as? ItemTableViewCellModel else { return }
         
         self.artworkImageView.kf.setImage(with: itemCellViewModel.artworkImageUrl, placeholder: UIImage(named: "placeholder"), options: nil, completionHandler: nil)

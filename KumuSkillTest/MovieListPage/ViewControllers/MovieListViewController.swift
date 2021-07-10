@@ -17,6 +17,8 @@ class MovieListViewController: UIViewController {
     
     var timer: Timer?
     
+    //MARK: - VC life cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -29,6 +31,8 @@ class MovieListViewController: UIViewController {
         super.viewWillAppear(animated)
         self.timer?.invalidate()
     }
+    
+    //MARK: - Methods
     
     ///Setup UI of Movies List Page
     private func setupUI() {
@@ -59,6 +63,8 @@ class MovieListViewController: UIViewController {
         self.moviesTableView.register(itemCellNib, forCellReuseIdentifier: self.viewModel.cellIdentifier)
     }
 
+    //MARK: - Actions
+    
     @objc private func performSearch(_ timer: Timer) {
         if let term = timer.userInfo as? String {
             self.viewModel.searchItems(term: term, countryCode: "AU", media: "movie")
@@ -74,7 +80,7 @@ extension MovieListViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: ItemTableViewCell = tableView.dequeueReusableCell(withIdentifier: self.viewModel.cellIdentifier, for: indexPath) as! ItemTableViewCell
+        let cell: BaseTableViewCell = tableView.dequeueReusableCell(withIdentifier: self.viewModel.cellIdentifier, for: indexPath) as! BaseTableViewCell
         cell.bind(cellViewModel: self.viewModel.movies.value[indexPath.row])
         return cell
     }
