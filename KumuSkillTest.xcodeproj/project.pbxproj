@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,20 +13,24 @@
 		4D5B909526998168005555B8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D5B909426998168005555B8 /* Assets.xcassets */; };
 		4D5B909826998168005555B8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D5B909626998168005555B8 /* LaunchScreen.storyboard */; };
 		4D5B90AA269988AD005555B8 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5B90A9269988AD005555B8 /* Movie.swift */; };
-		4D5B90AC26998DB3005555B8 /* MovieViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5B90AB26998DB3005555B8 /* MovieViewModel.swift */; };
-		4D5B90AE26998DC5005555B8 /* MovieListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5B90AD26998DC5005555B8 /* MovieListViewModel.swift */; };
 		4D5B90B1269993CE005555B8 /* MovieListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5B90B0269993CE005555B8 /* MovieListViewController.swift */; };
 		4D5B90B726999574005555B8 /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5B90B526999574005555B8 /* ItemTableViewCell.swift */; };
 		4D5B90B826999574005555B8 /* ItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D5B90B626999574005555B8 /* ItemTableViewCell.xib */; };
 		4D5B90BB26999E7A005555B8 /* ItemTableViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5B90BA26999E7A005555B8 /* ItemTableViewCellModel.swift */; };
 		4D5B90C12699A2A3005555B8 /* BaseCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5B90C02699A2A3005555B8 /* BaseCellViewModel.swift */; };
 		4D5B90C42699A42C005555B8 /* ItemType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5B90C32699A42C005555B8 /* ItemType.swift */; };
-		51D236AADFA8AC5E3FFE2396 /* Pods_KumuSkillTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7599F571710656C183455D9A /* Pods_KumuSkillTest.framework */; };
+		4D5B90CB2699B363005555B8 /* MovieCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5B90CA2699B363005555B8 /* MovieCellViewModel.swift */; };
+		4D5B90CD2699B45D005555B8 /* MovieListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5B90CC2699B45D005555B8 /* MovieListViewModel.swift */; };
+		4D5B90D02699B67F005555B8 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 4D5B90CF2699B67F005555B8 /* Alamofire */; };
+		4D5B90D32699B6AF005555B8 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 4D5B90D22699B6AF005555B8 /* Kingfisher */; };
+		4D5B90D82699B864005555B8 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5B90D72699B864005555B8 /* APIManager.swift */; };
+		4D5B90DB2699B8E9005555B8 /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5B90DA2699B8E9005555B8 /* AppError.swift */; };
+		4D5B90DE2699BB0B005555B8 /* SearchRoutes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5B90DD2699BB0B005555B8 /* SearchRoutes.swift */; };
+		4D5B90E02699BB9D005555B8 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5B90DF2699BB9D005555B8 /* Constants.swift */; };
+		4D5B90E22699BC83005555B8 /* APIConfigurationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5B90E12699BC83005555B8 /* APIConfigurationProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		042557AA0499953B7A8131AF /* Pods-KumuSkillTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KumuSkillTest.release.xcconfig"; path = "Target Support Files/Pods-KumuSkillTest/Pods-KumuSkillTest.release.xcconfig"; sourceTree = "<group>"; };
-		23B21858BA4BBE1CD6D9FF55 /* Pods-KumuSkillTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KumuSkillTest.debug.xcconfig"; path = "Target Support Files/Pods-KumuSkillTest/Pods-KumuSkillTest.debug.xcconfig"; sourceTree = "<group>"; };
 		4D5B908826998167005555B8 /* KumuSkillTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KumuSkillTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D5B908B26998167005555B8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4D5B908D26998167005555B8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -35,15 +39,19 @@
 		4D5B909726998168005555B8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4D5B909926998168005555B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4D5B90A9269988AD005555B8 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
-		4D5B90AB26998DB3005555B8 /* MovieViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieViewModel.swift; sourceTree = "<group>"; };
-		4D5B90AD26998DC5005555B8 /* MovieListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListViewModel.swift; sourceTree = "<group>"; };
 		4D5B90B0269993CE005555B8 /* MovieListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListViewController.swift; sourceTree = "<group>"; };
 		4D5B90B526999574005555B8 /* ItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTableViewCell.swift; sourceTree = "<group>"; };
 		4D5B90B626999574005555B8 /* ItemTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemTableViewCell.xib; sourceTree = "<group>"; };
 		4D5B90BA26999E7A005555B8 /* ItemTableViewCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTableViewCellModel.swift; sourceTree = "<group>"; };
 		4D5B90C02699A2A3005555B8 /* BaseCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCellViewModel.swift; sourceTree = "<group>"; };
 		4D5B90C32699A42C005555B8 /* ItemType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemType.swift; sourceTree = "<group>"; };
-		7599F571710656C183455D9A /* Pods_KumuSkillTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KumuSkillTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4D5B90CA2699B363005555B8 /* MovieCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCellViewModel.swift; sourceTree = "<group>"; };
+		4D5B90CC2699B45D005555B8 /* MovieListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListViewModel.swift; sourceTree = "<group>"; };
+		4D5B90D72699B864005555B8 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		4D5B90DA2699B8E9005555B8 /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
+		4D5B90DD2699BB0B005555B8 /* SearchRoutes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRoutes.swift; sourceTree = "<group>"; };
+		4D5B90DF2699BB9D005555B8 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		4D5B90E12699BC83005555B8 /* APIConfigurationProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConfigurationProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,28 +59,19 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				51D236AADFA8AC5E3FFE2396 /* Pods_KumuSkillTest.framework in Frameworks */,
+				4D5B90D32699B6AF005555B8 /* Kingfisher in Frameworks */,
+				4D5B90D02699B67F005555B8 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0198E82BABB86E742D0A263C /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				7599F571710656C183455D9A /* Pods_KumuSkillTest.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		4D5B907F26998167005555B8 = {
 			isa = PBXGroup;
 			children = (
 				4D5B908A26998167005555B8 /* KumuSkillTest */,
 				4D5B908926998167005555B8 /* Products */,
-				7E5FDB3D6472C0061B6DC4C8 /* Pods */,
-				0198E82BABB86E742D0A263C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -87,12 +86,10 @@
 		4D5B908A26998167005555B8 /* KumuSkillTest */ = {
 			isa = PBXGroup;
 			children = (
+				4D5B90D62699B854005555B8 /* Services */,
 				4D5B90C62699A6F4005555B8 /* MovieList */,
 				4D5B90A5269987A8005555B8 /* Views */,
-				4D5B90A326998789005555B8 /* Services */,
-				4D5B90A226998780005555B8 /* ViewModels */,
 				4D5B90A12699877B005555B8 /* Models */,
-				4D5B90A026998777005555B8 /* Routes */,
 				4D5B909F26998757005555B8 /* Core */,
 			);
 			path = KumuSkillTest;
@@ -101,19 +98,14 @@
 		4D5B909F26998757005555B8 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				4D5B90D92699B8DD005555B8 /* Network */,
 				4D5B90C22699A3F7005555B8 /* Enums */,
 				4D5B909926998168005555B8 /* Info.plist */,
 				4D5B908B26998167005555B8 /* AppDelegate.swift */,
 				4D5B908D26998167005555B8 /* SceneDelegate.swift */,
+				4D5B90DF2699BB9D005555B8 /* Constants.swift */,
 			);
 			path = Core;
-			sourceTree = "<group>";
-		};
-		4D5B90A026998777005555B8 /* Routes */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Routes;
 			sourceTree = "<group>";
 		};
 		4D5B90A12699877B005555B8 /* Models */ = {
@@ -124,25 +116,11 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		4D5B90A226998780005555B8 /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-				4D5B90BC26999E92005555B8 /* Items */,
-			);
-			path = ViewModels;
-			sourceTree = "<group>";
-		};
-		4D5B90A326998789005555B8 /* Services */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Services;
-			sourceTree = "<group>";
-		};
 		4D5B90A426998798005555B8 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
 				4D5B90B0269993CE005555B8 /* MovieListViewController.swift */,
+				4D5B90CC2699B45D005555B8 /* MovieListViewModel.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -182,23 +160,6 @@
 			path = UITableViewCells;
 			sourceTree = "<group>";
 		};
-		4D5B90B9269999F1005555B8 /* Movie */ = {
-			isa = PBXGroup;
-			children = (
-				4D5B90AB26998DB3005555B8 /* MovieViewModel.swift */,
-				4D5B90AD26998DC5005555B8 /* MovieListViewModel.swift */,
-			);
-			path = Movie;
-			sourceTree = "<group>";
-		};
-		4D5B90BC26999E92005555B8 /* Items */ = {
-			isa = PBXGroup;
-			children = (
-				4D5B90B9269999F1005555B8 /* Movie */,
-			);
-			path = Items;
-			sourceTree = "<group>";
-		};
 		4D5B90BF2699A291005555B8 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -236,6 +197,7 @@
 		4D5B90C82699A74C005555B8 /* UITableViewCells */ = {
 			isa = PBXGroup;
 			children = (
+				4D5B90CA2699B363005555B8 /* MovieCellViewModel.swift */,
 			);
 			path = UITableViewCells;
 			sourceTree = "<group>";
@@ -250,13 +212,30 @@
 			path = Item;
 			sourceTree = "<group>";
 		};
-		7E5FDB3D6472C0061B6DC4C8 /* Pods */ = {
+		4D5B90D62699B854005555B8 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				23B21858BA4BBE1CD6D9FF55 /* Pods-KumuSkillTest.debug.xcconfig */,
-				042557AA0499953B7A8131AF /* Pods-KumuSkillTest.release.xcconfig */,
+				4D5B90D72699B864005555B8 /* APIManager.swift */,
 			);
-			path = Pods;
+			path = Services;
+			sourceTree = "<group>";
+		};
+		4D5B90D92699B8DD005555B8 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				4D5B90DC2699BA7E005555B8 /* Routes */,
+				4D5B90DA2699B8E9005555B8 /* AppError.swift */,
+				4D5B90E12699BC83005555B8 /* APIConfigurationProtocol.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		4D5B90DC2699BA7E005555B8 /* Routes */ = {
+			isa = PBXGroup;
+			children = (
+				4D5B90DD2699BB0B005555B8 /* SearchRoutes.swift */,
+			);
+			path = Routes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -266,17 +245,19 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4D5B909C26998168005555B8 /* Build configuration list for PBXNativeTarget "KumuSkillTest" */;
 			buildPhases = (
-				AFC0E48A9F11E57F7A45A0A5 /* [CP] Check Pods Manifest.lock */,
 				4D5B908426998167005555B8 /* Sources */,
 				4D5B908526998167005555B8 /* Frameworks */,
 				4D5B908626998167005555B8 /* Resources */,
-				A9BE6BCAE54DF4EF7A9D46F9 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = KumuSkillTest;
+			packageProductDependencies = (
+				4D5B90CF2699B67F005555B8 /* Alamofire */,
+				4D5B90D22699B6AF005555B8 /* Kingfisher */,
+			);
 			productName = KumuSkillTest;
 			productReference = 4D5B908826998167005555B8 /* KumuSkillTest.app */;
 			productType = "com.apple.product-type.application";
@@ -304,6 +285,10 @@
 				Base,
 			);
 			mainGroup = 4D5B907F26998167005555B8;
+			packageReferences = (
+				4D5B90CE2699B67F005555B8 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				4D5B90D12699B6AF005555B8 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			productRefGroup = 4D5B908926998167005555B8 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -327,63 +312,26 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		A9BE6BCAE54DF4EF7A9D46F9 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-KumuSkillTest/Pods-KumuSkillTest-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-KumuSkillTest/Pods-KumuSkillTest-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-KumuSkillTest/Pods-KumuSkillTest-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		AFC0E48A9F11E57F7A45A0A5 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-KumuSkillTest-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		4D5B908426998167005555B8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				4D5B908C26998167005555B8 /* AppDelegate.swift in Sources */,
+				4D5B90CB2699B363005555B8 /* MovieCellViewModel.swift in Sources */,
 				4D5B908E26998167005555B8 /* SceneDelegate.swift in Sources */,
 				4D5B90B726999574005555B8 /* ItemTableViewCell.swift in Sources */,
+				4D5B90D82699B864005555B8 /* APIManager.swift in Sources */,
 				4D5B90AA269988AD005555B8 /* Movie.swift in Sources */,
 				4D5B90B1269993CE005555B8 /* MovieListViewController.swift in Sources */,
-				4D5B90AC26998DB3005555B8 /* MovieViewModel.swift in Sources */,
 				4D5B90C42699A42C005555B8 /* ItemType.swift in Sources */,
-				4D5B90AE26998DC5005555B8 /* MovieListViewModel.swift in Sources */,
+				4D5B90DB2699B8E9005555B8 /* AppError.swift in Sources */,
+				4D5B90E22699BC83005555B8 /* APIConfigurationProtocol.swift in Sources */,
+				4D5B90CD2699B45D005555B8 /* MovieListViewModel.swift in Sources */,
 				4D5B90BB26999E7A005555B8 /* ItemTableViewCellModel.swift in Sources */,
+				4D5B90E02699BB9D005555B8 /* Constants.swift in Sources */,
 				4D5B90C12699A2A3005555B8 /* BaseCellViewModel.swift in Sources */,
+				4D5B90DE2699BB0B005555B8 /* SearchRoutes.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -527,7 +475,6 @@
 		};
 		4D5B909D26998168005555B8 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 23B21858BA4BBE1CD6D9FF55 /* Pods-KumuSkillTest.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -547,7 +494,6 @@
 		};
 		4D5B909E26998168005555B8 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 042557AA0499953B7A8131AF /* Pods-KumuSkillTest.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -587,6 +533,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		4D5B90CE2699B67F005555B8 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.4.3;
+			};
+		};
+		4D5B90D12699B6AF005555B8 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.3.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		4D5B90CF2699B67F005555B8 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4D5B90CE2699B67F005555B8 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		4D5B90D22699B6AF005555B8 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4D5B90D12699B6AF005555B8 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 4D5B908026998167005555B8 /* Project object */;
 }
