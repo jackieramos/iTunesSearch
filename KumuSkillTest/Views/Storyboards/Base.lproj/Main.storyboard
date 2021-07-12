@@ -20,10 +20,10 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Movie List View Controller-->
+        <!--Item List View Controller-->
         <scene sceneID="V7D-3e-1rE">
             <objects>
-                <viewController storyboardIdentifier="MovieListViewController" id="1KU-G0-Oja" customClass="MovieListViewController" customModule="KumuSkillTest" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ItemListViewController" id="1KU-G0-Oja" customClass="ItemListViewController" customModule="KumuSkillTest" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zBS-b4-W6o">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

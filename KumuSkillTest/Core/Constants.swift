@@ -14,5 +14,19 @@ struct K {
         static let term = "term"
         static let countryCode = "country"
         static let media = "media"
+        static let trackId = "trackId"
+        static let trackName = "trackName"
+        static let artworkStringUrl = "artworkStringUrl"
+        static let currency = "currency"
+        static let trackPrice = "trackPrice"
+        static let genre = "genre"
+        static let longDescription = "longDescription"
+        static let isFavorite = "isFavorite"
     }
+    
+    struct CoreDataEntity {
+        static let item = "Item"
+    }
+    
+    static let appName = "KumuSkillTest"
 }

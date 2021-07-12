@@ -1,5 +1,5 @@
 //
-//  MovieListViewController.swift
+//  ItemListViewController.swift
 //  KumuSkillTest
 //
 //  Created by Jackie Ramos on 7/10/21.
@@ -7,13 +7,13 @@
 
 import UIKit
 
-class MovieListViewController: UIViewController {
+class ItemListViewController: UIViewController {
 
     @IBOutlet weak var moviesTableView: UITableView!
     
     lazy var searchBar: UISearchBar = UISearchBar()
     
-    var viewModel: MovieListViewModel = MovieListViewModel()
+    var viewModel: ItemListViewModel = ItemListViewModel()
     
     var timer: Timer?
     
@@ -25,6 +25,7 @@ class MovieListViewController: UIViewController {
         self.setupUI()
         self.registerNib()
         self.bindData()
+        self.viewModel.getItems()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -74,7 +75,7 @@ class MovieListViewController: UIViewController {
 
 //MARK: - UITableViewDelegate and DataSource
 
-extension MovieListViewController: UITableViewDelegate, UITableViewDataSource {
+extension ItemListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.viewModel.movies.value.count
     }
@@ -94,7 +95,7 @@ extension MovieListViewController: UITableViewDelegate, UITableViewDataSource {
 
 //MARK: - UISearchBarDelegate
 
-extension MovieListViewController: UISearchBarDelegate {
+extension ItemListViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         self.timer?.invalidate()
         self.timer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(performSearch(_:)), userInfo: searchText, repeats: false)

@@ -9,9 +9,9 @@ import Foundation
 
 class MovieCellViewModel: ItemTableViewCellModel {
     
-    var movie: Movie!
+    var movie: Item!
     
-    init(movie: Movie) {
+    init(movie: Item) {
         self.movie = movie
         
         let formattedPrice = "\(movie.currency) \(movie.trackPrice)"

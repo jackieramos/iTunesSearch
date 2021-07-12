@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 import Alamofire
 
 class APIManager {
@@ -17,8 +18,16 @@ class APIManager {
     @discardableResult
     private static func performRequest<T:Decodable>(route:URLRequestConvertible, decoder: JSONDecoder = JSONDecoder(), completion:@escaping (DataResponse<T, AFError>)->Void) -> DataRequest {
 
+        let context = CoreDataManager.shared.container.viewContext
+        decoder.userInfo[CodingUserInfoKey.context!] = context
+        
         let request = AF.request(route)
                         .responseDecodable (decoder: decoder){ (response: DataResponse<T, AFError>) in
+                            do {
+                                try context.save()
+                            } catch {
+                                print("Something went wrong")
+                            }
                             completion(response)
         }
         
@@ -57,16 +66,6 @@ class APIManager {
                 }
             }
         })
-    }
-
-    /// Search items.
-    ///
-    /// - Parameters:
-    ///   - term: The URL-encoded text string you want to search for. For example: jack+johnson.
-    ///   - countryCode: The two-letter country code for the store you want to search. The search uses the default store front for the specified country. For example: US. The default is US.
-    ///   - media: The media type you want to search for. For example: movie. The default is all.
-    static func searchItems(term: String, countryCode: String, media: String, completion:@escaping (Result<MovieList, AppError>)->Void) {
-        request(route: SearchRoutes.searchItems(term: term, countryCode: countryCode, media: media), completion: completion)
     }
 }
 
