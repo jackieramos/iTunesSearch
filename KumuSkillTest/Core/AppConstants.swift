@@ -22,10 +22,14 @@ struct K {
         static let genre = "genre"
         static let longDescription = "longDescription"
         static let isFavorite = "isFavorite"
+        static let pageId = "pageId"
+        static let lastVisitedDate = "lastVisitedDate"
+        static let viewModel = "viewModel"
     }
     
     struct CoreDataEntity {
         static let item = "Item"
+        static let pageState = "PageState"
     }
     
     static let appName = "KumuSkillTest"

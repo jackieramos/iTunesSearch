@@ -40,7 +40,7 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="33"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="33" id="K0y-bN-lbt"/>
+                                    <constraint firstAttribute="height" priority="900" constant="33" id="K0y-bN-lbt"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -58,6 +58,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="mMB-Fz-frc"/>
                     <connections>
+                        <outlet property="lastVisitedContainerView" destination="b9W-jk-7K9" id="mIJ-07-OuF"/>
                         <outlet property="moviesTableView" destination="awi-MP-4g4" id="9Ca-qS-Yr6"/>
                         <segue destination="U01-Mk-9yi" kind="show" id="eEz-Kq-AHt"/>
                     </connections>
@@ -110,7 +111,7 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="33"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="33" id="Ema-8R-HBE"/>
+                                    <constraint firstAttribute="height" priority="900" constant="33" id="Ema-8R-HBE"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -129,6 +130,7 @@
                     <navigationItem key="navigationItem" title="Favorites" id="cZG-29-P5Z"/>
                     <connections>
                         <outlet property="favoritesTableView" destination="CcH-c0-0xf" id="uCA-0h-wn8"/>
+                        <outlet property="lastVisitedContainerView" destination="Cmv-lr-FMs" id="qKW-sQ-O5E"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Lk-gT-SMg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -270,7 +272,7 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="33"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="33" id="gfI-BJ-7JY"/>
+                                    <constraint firstAttribute="height" priority="900" constant="33" id="gfI-BJ-7JY"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -302,6 +304,7 @@
                         <outlet property="artworkImageView" destination="RWf-lC-IGk" id="xgc-qN-XOx"/>
                         <outlet property="favoriteButton" destination="83D-l3-pvx" id="fei-rc-gxj"/>
                         <outlet property="genreLabel" destination="nXV-Vf-IL7" id="emr-fk-s6E"/>
+                        <outlet property="lastVisitedContainerView" destination="VjY-sN-tQc" id="zjL-U1-Y8e"/>
                         <outlet property="longDescriptionLabel" destination="bYN-ZD-qO9" id="wjx-EG-W5G"/>
                         <outlet property="nameLabel" destination="bD7-ix-sKG" id="iKB-u7-fPA"/>
                         <outlet property="priceLabel" destination="AkB-TH-hHG" id="Npd-k7-ift"/>

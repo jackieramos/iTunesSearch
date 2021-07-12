@@ -12,6 +12,7 @@ import RxSwift
 class ItemListViewModel {
     
     var movies: BehaviorRelay<[MovieCellViewModel]> = BehaviorRelay(value: [])
+    var pageState: PageState!
     
     let disposeBag = DisposeBag()
     
@@ -36,6 +37,7 @@ extension ItemListViewModel {
                     }
                     return MovieCellViewModel(movie: item)
                 }))
+                self.saveLastState()
             case .failure(let error):
                 print(error.debugDescription)
             }
@@ -45,14 +47,32 @@ extension ItemListViewModel {
 
 //MARK: - Core data call
 extension ItemListViewModel {
-    func getItems() {
-        let result = CoreDataManager.shared.getAllItems()
+    func getLastState() {
+        let result = CoreDataManager.shared.getPageSate(pageId: AppPage.itemList.rawValue)
         switch result {
-        case .success(let items):
-            let items = items.map({MovieCellViewModel(movie: $0)})
-            self.movies.accept(items)
+        case .success(let pageState):
+            self.pageState = pageState
+            let lastStateItems = pageState.viewModel.compactMap { itemsDict -> MovieCellViewModel? in
+                if let item = Item(dictionary: itemsDict) {
+                    return MovieCellViewModel(movie: item)
+                }
+                return nil
+            }
+            self.movies.accept(lastStateItems)
         case .failure(let error):
             print("Error: \(error.localizedDescription)")
+        }
+    }
+    
+    func saveLastState() {
+        let itemsArray = self.movies.value.map({$0.item.toDictionary})
+        let pageState = PageState(pageId: AppPage.itemList.rawValue, lastVisitedDate: Date().stringFormat("MM/dd/YY HH:mm a"), viewModel: itemsArray)
+        let result = CoreDataManager.shared.savePageState(page: pageState)
+        switch result {
+        case .success(_):
+            print("Success saving state")
+        case .failure(let error):
+            print("Error saving state: \(error.localizedDescription)")
         }
     }
 }

@@ -10,6 +10,7 @@ import Kingfisher
 
 class ItemDetailViewController: UIViewController {
 
+    @IBOutlet weak var lastVisitedContainerView: UIView!
     @IBOutlet weak var artworkImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
@@ -26,13 +27,13 @@ class ItemDetailViewController: UIViewController {
         self.bindData()
     }
     
-    ///Bind ViewModel
+    ///Bind ViewModel - observe changes on viewModel.item
     private func bindData() {
         self.viewModel.item
             .asObservable()
             .subscribe(onNext: { [unowned self] _ in
                 DispatchQueue.main.async {
-                    self.setupUI()
+                    self.setupItemDetails()
                 }
             })
             .disposed(by: self.viewModel.disposeBag)
@@ -40,6 +41,20 @@ class ItemDetailViewController: UIViewController {
     
     ///Setup UI
     private func setupUI() {
+        //Add last visited view for showing last visited label
+        let lastVisitedView: LastVisitedView = LastVisitedView.fromNib()
+        self.lastVisitedContainerView.addSubview(lastVisitedView)
+        
+        lastVisitedView.translatesAutoresizingMaskIntoConstraints = false
+        lastVisitedView.topAnchor.constraint(equalTo: self.lastVisitedContainerView.topAnchor, constant: 0).isActive = true
+        lastVisitedView.bottomAnchor.constraint(equalTo: self.lastVisitedContainerView.bottomAnchor, constant: 0).isActive = true
+        lastVisitedView.leadingAnchor.constraint(equalTo: self.lastVisitedContainerView.leadingAnchor, constant: 0).isActive = true
+        lastVisitedView.trailingAnchor.constraint(equalTo: self.lastVisitedContainerView.trailingAnchor, constant: 0).isActive = true
+        
+        self.setupItemDetails()
+    }
+    
+    private func setupItemDetails() {
         guard let itemViewModel = self.viewModel.item else { return }
 
         self.navigationItem.rightBarButtonItem?.image = UIImage(systemName: itemViewModel.value.item.isFavorite ? "star.fill" : "star")

@@ -14,6 +14,7 @@ enum AppError: Error {
     case validationFailed
     case serviceUnavailable
     case requestError(AFError)
+    case notFound
     case entityNotFound(_ entityName: String)
     case failed(Error)
 }
@@ -31,6 +32,8 @@ extension AppError: CustomDebugStringConvertible {
             return "Service Unavailable"
         case let .requestError(error):
             return error.localizedDescription
+        case .notFound:
+            return "Not found"
         case let .entityNotFound(entityName):
             return "\(entityName) not found"
         case let .failed(error):

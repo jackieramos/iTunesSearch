@@ -18,7 +18,7 @@
 		4D5B90B826999574005555B8 /* ItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D5B90B626999574005555B8 /* ItemTableViewCell.xib */; };
 		4D5B90BB26999E7A005555B8 /* ItemTableViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5B90BA26999E7A005555B8 /* ItemTableViewCellModel.swift */; };
 		4D5B90C12699A2A3005555B8 /* BaseCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5B90C02699A2A3005555B8 /* BaseCellViewModel.swift */; };
-		4D5B90C42699A42C005555B8 /* ItemType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5B90C32699A42C005555B8 /* ItemType.swift */; };
+		4D5B90C42699A42C005555B8 /* AppEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5B90C32699A42C005555B8 /* AppEnums.swift */; };
 		4D5B90CB2699B363005555B8 /* MovieCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5B90CA2699B363005555B8 /* MovieCellViewModel.swift */; };
 		4D5B90CD2699B45D005555B8 /* ItemListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5B90CC2699B45D005555B8 /* ItemListViewModel.swift */; };
 		4D5B90D02699B67F005555B8 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 4D5B90CF2699B67F005555B8 /* Alamofire */; };
@@ -44,6 +44,10 @@
 		4D5B910D269C0901005555B8 /* AppUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5B910C269C0901005555B8 /* AppUserDefaults.swift */; };
 		4D5B9111269C17AC005555B8 /* LastVisitedView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D5B9110269C17AC005555B8 /* LastVisitedView.xib */; };
 		4D5B9113269C181B005555B8 /* LastVisitedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5B9112269C181B005555B8 /* LastVisitedView.swift */; };
+		4D5B9116269C1ED5005555B8 /* UIView+UINib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5B9115269C1ED5005555B8 /* UIView+UINib.swift */; };
+		4D5B9118269C2401005555B8 /* CoreDataManager+PageState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5B9117269C2401005555B8 /* CoreDataManager+PageState.swift */; };
+		4D5B911A269C2444005555B8 /* PageState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5B9119269C2444005555B8 /* PageState.swift */; };
+		4D5B911C269C3BAB005555B8 /* Date+DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5B911B269C3BAB005555B8 /* Date+DateFormatter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,7 +64,7 @@
 		4D5B90B626999574005555B8 /* ItemTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemTableViewCell.xib; sourceTree = "<group>"; };
 		4D5B90BA26999E7A005555B8 /* ItemTableViewCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTableViewCellModel.swift; sourceTree = "<group>"; };
 		4D5B90C02699A2A3005555B8 /* BaseCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCellViewModel.swift; sourceTree = "<group>"; };
-		4D5B90C32699A42C005555B8 /* ItemType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemType.swift; sourceTree = "<group>"; };
+		4D5B90C32699A42C005555B8 /* AppEnums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEnums.swift; sourceTree = "<group>"; };
 		4D5B90CA2699B363005555B8 /* MovieCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCellViewModel.swift; sourceTree = "<group>"; };
 		4D5B90CC2699B45D005555B8 /* ItemListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemListViewModel.swift; sourceTree = "<group>"; };
 		4D5B90D72699B864005555B8 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
@@ -82,6 +86,10 @@
 		4D5B910C269C0901005555B8 /* AppUserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUserDefaults.swift; sourceTree = "<group>"; };
 		4D5B9110269C17AC005555B8 /* LastVisitedView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LastVisitedView.xib; sourceTree = "<group>"; };
 		4D5B9112269C181B005555B8 /* LastVisitedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastVisitedView.swift; sourceTree = "<group>"; };
+		4D5B9115269C1ED5005555B8 /* UIView+UINib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+UINib.swift"; sourceTree = "<group>"; };
+		4D5B9117269C2401005555B8 /* CoreDataManager+PageState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreDataManager+PageState.swift"; sourceTree = "<group>"; };
+		4D5B9119269C2444005555B8 /* PageState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageState.swift; sourceTree = "<group>"; };
+		4D5B911B269C3BAB005555B8 /* Date+DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+DateFormatter.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,15 +140,15 @@
 		4D5B909F26998757005555B8 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				4D5B90FC269A1405005555B8 /* KumuSkillTest.xcdatamodeld */,
+				4D5B9114269C1EB7005555B8 /* AppExtensions */,
 				4D5B90D92699B8DD005555B8 /* Network */,
-				4D5B90C22699A3F7005555B8 /* AppEnums */,
+				4D5B90C32699A42C005555B8 /* AppEnums.swift */,
+				4D5B90FC269A1405005555B8 /* KumuSkillTest.xcdatamodeld */,
 				4D5B909926998168005555B8 /* Info.plist */,
 				4D5B908B26998167005555B8 /* AppDelegate.swift */,
 				4D5B908D26998167005555B8 /* SceneDelegate.swift */,
 				4D5B90DF2699BB9D005555B8 /* AppConstants.swift */,
 				4D5B90EF2699D913005555B8 /* AppStoryBoard.swift */,
-				4D5B90F92699F095005555B8 /* AppExtensions.swift */,
 				4D5B910C269C0901005555B8 /* AppUserDefaults.swift */,
 			);
 			path = Core;
@@ -150,6 +158,7 @@
 			isa = PBXGroup;
 			children = (
 				4D5B90A9269988AD005555B8 /* Item.swift */,
+				4D5B9119269C2444005555B8 /* PageState.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -207,14 +216,6 @@
 				4D5B90B226999505005555B8 /* UITableViewCells */,
 			);
 			path = Cells;
-			sourceTree = "<group>";
-		};
-		4D5B90C22699A3F7005555B8 /* AppEnums */ = {
-			isa = PBXGroup;
-			children = (
-				4D5B90C32699A42C005555B8 /* ItemType.swift */,
-			);
-			path = AppEnums;
 			sourceTree = "<group>";
 		};
 		4D5B90C62699A6F4005555B8 /* ItemListPage */ = {
@@ -310,6 +311,7 @@
 			children = (
 				4D5B90F32699E567005555B8 /* CoreDataManager.swift */,
 				4D5B9104269BDCB1005555B8 /* CoreDataManager+Item.swift */,
+				4D5B9117269C2401005555B8 /* CoreDataManager+PageState.swift */,
 			);
 			path = CoreDataManager;
 			sourceTree = "<group>";
@@ -346,6 +348,16 @@
 				4D5B9112269C181B005555B8 /* LastVisitedView.swift */,
 			);
 			path = LastVisitedView;
+			sourceTree = "<group>";
+		};
+		4D5B9114269C1EB7005555B8 /* AppExtensions */ = {
+			isa = PBXGroup;
+			children = (
+				4D5B90F92699F095005555B8 /* AppExtensions.swift */,
+				4D5B9115269C1ED5005555B8 /* UIView+UINib.swift */,
+				4D5B911B269C3BAB005555B8 /* Date+DateFormatter.swift */,
+			);
+			path = AppExtensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -431,6 +443,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D5B9116269C1ED5005555B8 /* UIView+UINib.swift in Sources */,
 				4D5B9101269BDC54005555B8 /* APIManager+Search.swift in Sources */,
 				4D5B908C26998167005555B8 /* AppDelegate.swift in Sources */,
 				4D5B90CB2699B363005555B8 /* MovieCellViewModel.swift in Sources */,
@@ -442,13 +455,15 @@
 				4D5B90AA269988AD005555B8 /* Item.swift in Sources */,
 				4D5B90B1269993CE005555B8 /* ItemListViewController.swift in Sources */,
 				4D5B90FA2699F095005555B8 /* AppExtensions.swift in Sources */,
-				4D5B90C42699A42C005555B8 /* ItemType.swift in Sources */,
+				4D5B90C42699A42C005555B8 /* AppEnums.swift in Sources */,
 				4D5B90DB2699B8E9005555B8 /* AppError.swift in Sources */,
+				4D5B911C269C3BAB005555B8 /* Date+DateFormatter.swift in Sources */,
 				4D5B90FE269A1405005555B8 /* KumuSkillTest.xcdatamodeld in Sources */,
 				4D5B90E22699BC83005555B8 /* APIConfigurationProtocol.swift in Sources */,
 				4D5B90F02699D913005555B8 /* AppStoryBoard.swift in Sources */,
 				4D5B90EC2699D667005555B8 /* ItemDetailViewController.swift in Sources */,
 				4D5B90CD2699B45D005555B8 /* ItemListViewModel.swift in Sources */,
+				4D5B911A269C2444005555B8 /* PageState.swift in Sources */,
 				4D5B90EE2699D67C005555B8 /* ItemDetailViewModel.swift in Sources */,
 				4D5B90BB26999E7A005555B8 /* ItemTableViewCellModel.swift in Sources */,
 				4D5B90E02699BB9D005555B8 /* AppConstants.swift in Sources */,
@@ -457,6 +472,7 @@
 				4D5B9105269BDCB1005555B8 /* CoreDataManager+Item.swift in Sources */,
 				4D5B910D269C0901005555B8 /* AppUserDefaults.swift in Sources */,
 				4D5B90F42699E567005555B8 /* CoreDataManager.swift in Sources */,
+				4D5B9118269C2401005555B8 /* CoreDataManager+PageState.swift in Sources */,
 				4D5B910B269BF7E1005555B8 /* FavoritesListViewModel.swift in Sources */,
 				4D5B90DE2699BB0B005555B8 /* SearchRoutes.swift in Sources */,
 			);

@@ -9,6 +9,7 @@ import UIKit
 
 class ItemListViewController: UIViewController {
 
+    @IBOutlet weak var lastVisitedContainerView: UIView!
     @IBOutlet weak var moviesTableView: UITableView!
     
     lazy var searchBar: UISearchBar = UISearchBar()
@@ -25,11 +26,11 @@ class ItemListViewController: UIViewController {
         self.setupUI()
         self.registerNib()
         self.bindData()
-        self.viewModel.getItems()
+        self.viewModel.getLastState()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
         self.timer?.invalidate()
     }
     
@@ -44,6 +45,20 @@ class ItemListViewController: UIViewController {
         self.searchBar.backgroundImage = UIImage()
         searchBar.delegate = self
         self.navigationItem.titleView = searchBar
+        self.addLastVisitedView()
+    }
+    
+    private func addLastVisitedView() {
+        //Add last visited view for showing last visited label
+        let lastVisitedView: LastVisitedView = LastVisitedView.fromNib()
+        lastVisitedView.bind(self.viewModel.pageState?.lastVisitedDate ?? "")
+        self.lastVisitedContainerView.addSubview(lastVisitedView)
+        
+        lastVisitedView.translatesAutoresizingMaskIntoConstraints = false
+        lastVisitedView.topAnchor.constraint(equalTo: self.lastVisitedContainerView.topAnchor, constant: 0).isActive = true
+        lastVisitedView.bottomAnchor.constraint(equalTo: self.lastVisitedContainerView.bottomAnchor, constant: 0).isActive = true
+        lastVisitedView.leadingAnchor.constraint(equalTo: self.lastVisitedContainerView.leadingAnchor, constant: 0).isActive = true
+        lastVisitedView.trailingAnchor.constraint(equalTo: self.lastVisitedContainerView.trailingAnchor, constant: 0).isActive = true
     }
     
     ///Data binding
@@ -53,6 +68,7 @@ class ItemListViewController: UIViewController {
             .subscribe(onNext: { [unowned self] _ in
                 DispatchQueue.main.async {
                     self.moviesTableView.reloadData()
+                    self.addLastVisitedView()
                 }
             })
             .disposed(by: self.viewModel.disposeBag)

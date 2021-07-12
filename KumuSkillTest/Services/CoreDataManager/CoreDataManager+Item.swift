@@ -42,8 +42,7 @@ extension CoreDataManager {
                 NSEntityDescription.entity(forEntityName: K.CoreDataEntity.item,
                                            in: managedContext) else { return .success(true) }
         
-        let item = NSManagedObject(entity: entity,
-                                     insertInto: managedContext)
+        let item = NSManagedObject(entity: entity, insertInto: managedContext)
         
         item.setValue(storeItem.trackId, forKey: K.APIParameterKey.trackId)
         item.setValue(storeItem.trackName, forKeyPath: K.APIParameterKey.trackName)

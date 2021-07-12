@@ -9,6 +9,7 @@ import UIKit
 
 class FavoritesListViewController: UIViewController {
 
+    @IBOutlet weak var lastVisitedContainerView: UIView!
     @IBOutlet weak var favoritesTableView: UITableView!
     
     var viewModel: FavoritesListViewModel = FavoritesListViewModel()
@@ -18,6 +19,7 @@ class FavoritesListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.setupUI()
         self.registerNib()
         self.bindData()
     }
@@ -25,6 +27,17 @@ class FavoritesListViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         self.viewModel.getFavoriteItems()
+    }
+    
+    private func setupUI() {
+        let lastVisitedView: LastVisitedView = LastVisitedView.fromNib()
+        self.lastVisitedContainerView.addSubview(lastVisitedView)
+        
+        lastVisitedView.translatesAutoresizingMaskIntoConstraints = false
+        lastVisitedView.topAnchor.constraint(equalTo: self.lastVisitedContainerView.topAnchor, constant: 0).isActive = true
+        lastVisitedView.bottomAnchor.constraint(equalTo: self.lastVisitedContainerView.bottomAnchor, constant: 0).isActive = true
+        lastVisitedView.leadingAnchor.constraint(equalTo: self.lastVisitedContainerView.leadingAnchor, constant: 0).isActive = true
+        lastVisitedView.trailingAnchor.constraint(equalTo: self.lastVisitedContainerView.trailingAnchor, constant: 0).isActive = true
     }
     
     ///Data binding

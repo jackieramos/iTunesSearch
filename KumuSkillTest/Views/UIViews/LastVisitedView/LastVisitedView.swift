@@ -11,7 +11,7 @@ class LastVisitedView: UIView {
 
     @IBOutlet weak var lastVisitedLabel: UILabel!
     
-    func bind(_ date: Date) {
-        
+    func bind(_ dateInString: String) {
+        self.lastVisitedLabel.text = "Last visited: \(dateInString)"
     }
 }

@@ -18,3 +18,9 @@ enum ItemType {
     case software
     case ebook
 }
+
+enum AppPage: Int16 {
+    case itemList = 0
+    case itemDetail = 1
+    case favoriteItemList = 2
+}
