@@ -9,14 +9,25 @@ import CoreData
 
 extension CoreDataManager {
     ///Get items from Core Data
-    func getItems() -> Result<[Item], AppError> {
+    func getAllItems() -> Result<[Item], AppError> {
         let fetchRequest =
             NSFetchRequest<Item>(entityName: K.CoreDataEntity.item)
         
         do {
             return .success(try self.container.viewContext.fetch(fetchRequest))
         } catch let error as NSError {
-            print("Could not fetch. \(error), \(error.userInfo)")
+            return .failure(AppError.failed(error))
+        }
+    }
+    
+    /// Get favorited items
+    func getFavoriteItems() -> Result<[Item], AppError> {
+        let fetchRequest = NSFetchRequest<Item>(entityName: K.CoreDataEntity.item)
+        fetchRequest.predicate = NSPredicate(format: "\(K.APIParameterKey.isFavorite) = true")
+
+        do {
+            return .success(try self.container.viewContext.fetch(fetchRequest))
+        } catch let error as NSError {
             return .failure(AppError.failed(error))
         }
     }
@@ -47,7 +58,6 @@ extension CoreDataManager {
             try managedContext.save()
             return .success(true)
         } catch let error as NSError {
-            print("Could not save. \(error), \(error.userInfo)")
             return .failure(AppError.failed(error))
         }
     }
@@ -59,15 +69,15 @@ extension CoreDataManager {
     ///   - isFavorite: true if user marks the item as favorite, false if user unfavorited the item
     func markItem(with trackId: Int64, asFavorite: Bool) -> Result<Item, AppError> {
         let context = self.container.viewContext
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: K.CoreDataEntity.item)
+        let fetchRequest = NSFetchRequest<Item>(entityName: K.CoreDataEntity.item)
         
         var storeItem: Item!
 
         fetchRequest.predicate = NSPredicate(format: "\(K.APIParameterKey.trackId) = %@", argumentArray: [trackId])
 
         do {
-            let results = try context.fetch(fetchRequest) as? [Item]
-            if let item = results?.first {
+            let results = try context.fetch(fetchRequest)
+            if let item = results.first {
                 item.setValue(asFavorite, forKey: K.APIParameterKey.isFavorite)
                 storeItem = item
             }
@@ -79,7 +89,6 @@ extension CoreDataManager {
             try context.save()
             return .success(storeItem)
         } catch {
-            print("Saving Core Data Failed: \(error)")
             return .failure(AppError.failed(error))
         }
     }

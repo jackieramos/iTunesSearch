@@ -46,7 +46,7 @@ extension ItemListViewModel {
 //MARK: - Core data call
 extension ItemListViewModel {
     func getItems() {
-        let result = CoreDataManager.shared.getItems()
+        let result = CoreDataManager.shared.getAllItems()
         switch result {
         case .success(let items):
             let items = items.map({MovieCellViewModel(movie: $0)})

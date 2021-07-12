@@ -39,6 +39,8 @@
 		4D5B90FE269A1405005555B8 /* KumuSkillTest.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4D5B90FC269A1405005555B8 /* KumuSkillTest.xcdatamodeld */; };
 		4D5B9101269BDC54005555B8 /* APIManager+Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5B9100269BDC54005555B8 /* APIManager+Search.swift */; };
 		4D5B9105269BDCB1005555B8 /* CoreDataManager+Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5B9104269BDCB1005555B8 /* CoreDataManager+Item.swift */; };
+		4D5B9109269BF7D5005555B8 /* FavoritesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5B9108269BF7D5005555B8 /* FavoritesListViewController.swift */; };
+		4D5B910B269BF7E1005555B8 /* FavoritesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5B910A269BF7E1005555B8 /* FavoritesListViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +74,8 @@
 		4D5B90FD269A1405005555B8 /* KumuSkillTest.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = KumuSkillTest.xcdatamodel; sourceTree = "<group>"; };
 		4D5B9100269BDC54005555B8 /* APIManager+Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APIManager+Search.swift"; sourceTree = "<group>"; };
 		4D5B9104269BDCB1005555B8 /* CoreDataManager+Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreDataManager+Item.swift"; sourceTree = "<group>"; };
+		4D5B9108269BF7D5005555B8 /* FavoritesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesListViewController.swift; sourceTree = "<group>"; };
+		4D5B910A269BF7E1005555B8 /* FavoritesListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesListViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +112,7 @@
 		4D5B908A26998167005555B8 /* KumuSkillTest */ = {
 			isa = PBXGroup;
 			children = (
+				4D5B9106269BF7B2005555B8 /* FavoritesPage */,
 				4D5B90E82699D61C005555B8 /* ItemDetailPage */,
 				4D5B90C62699A6F4005555B8 /* ItemListPage */,
 				4D5B90D62699B854005555B8 /* Services */,
@@ -301,6 +306,23 @@
 			path = CoreDataManager;
 			sourceTree = "<group>";
 		};
+		4D5B9106269BF7B2005555B8 /* FavoritesPage */ = {
+			isa = PBXGroup;
+			children = (
+				4D5B9107269BF7B9005555B8 /* ViewControllers */,
+			);
+			path = FavoritesPage;
+			sourceTree = "<group>";
+		};
+		4D5B9107269BF7B9005555B8 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				4D5B9108269BF7D5005555B8 /* FavoritesListViewController.swift */,
+				4D5B910A269BF7E1005555B8 /* FavoritesListViewModel.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -403,9 +425,11 @@
 				4D5B90EE2699D67C005555B8 /* ItemDetailViewModel.swift in Sources */,
 				4D5B90BB26999E7A005555B8 /* ItemTableViewCellModel.swift in Sources */,
 				4D5B90E02699BB9D005555B8 /* Constants.swift in Sources */,
+				4D5B9109269BF7D5005555B8 /* FavoritesListViewController.swift in Sources */,
 				4D5B90C12699A2A3005555B8 /* BaseCellViewModel.swift in Sources */,
 				4D5B9105269BDCB1005555B8 /* CoreDataManager+Item.swift in Sources */,
 				4D5B90F42699E567005555B8 /* CoreDataManager.swift in Sources */,
+				4D5B910B269BF7E1005555B8 /* FavoritesListViewModel.swift in Sources */,
 				4D5B90DE2699BB0B005555B8 /* SearchRoutes.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
