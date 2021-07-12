@@ -5,11 +5,12 @@
 //  Created by Jackie Ramos on 7/10/21.
 //
 
-import Foundation
+import UIKit
 
 class BaseCellViewModel {
     var title: String
     var subTitle: String
+    var placeholderImage = UIImage(named: "placeholder")
 
     init(title: String, subTitle: String) {
         self.title = title

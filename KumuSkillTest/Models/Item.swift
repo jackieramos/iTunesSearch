@@ -30,6 +30,7 @@ public class Item: NSManagedObject, Decodable {
     @NSManaged var trackPrice: Float
     @NSManaged var currency: String
     @NSManaged var longDescription: String
+    @NSManaged var isFavorite: Bool
 
     enum CodingKeys: String, CodingKey {
         case trackId, trackName, trackPrice, currency, longDescription

@@ -9,19 +9,20 @@ import Foundation
 import UIKit
 
 class ItemTableViewCellModel: BaseCellViewModel {
-    var genre: String
-    var formattedPrice: String
-    var artworkImageUrl: URL?
-    let placeholderImage = UIImage(named: "placeholder")
     
+    var item: Item!
+
     var longDescription: String {
         return ""
     }
     
-    init(name: String, price: String, genre: String, artworkImageUrl: URL?) {
-        self.genre = genre
-        self.formattedPrice = price
-        self.artworkImageUrl = artworkImageUrl
-        super.init(title: name, subTitle: price)
+    var artworkUrl: URL? {
+        return URL(string: item.artworkStringUrl)
+    }
+    
+    init(item: Item) {
+        self.item = item
+        let formattedPrice = "\(item.currency) \(item.trackPrice)"
+        super.init(title: item.trackName, subTitle: formattedPrice)
     }
 }

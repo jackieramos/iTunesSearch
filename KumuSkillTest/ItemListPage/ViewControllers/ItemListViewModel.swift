@@ -27,7 +27,13 @@ extension ItemListViewModel {
             switch response {
             case .success(let movieList):
                 self.movies.accept(movieList.movies.map({ item in
-                    CoreDataManager.shared.save(storeItem: item)
+                    let result = CoreDataManager.shared.saveItem(storeItem: item)
+                    switch result {
+                    case .success(_):
+                        print("Success")
+                    case .failure(let error):
+                        print("Error: \(error.localizedDescription)")
+                    }
                     return MovieCellViewModel(movie: item)
                 }))
             case .failure(let error):
@@ -40,8 +46,14 @@ extension ItemListViewModel {
 //MARK: - Core data call
 extension ItemListViewModel {
     func getItems() {
-        let items = CoreDataManager.shared.get().map({MovieCellViewModel(movie: $0)})
-        self.movies.accept(items)
+        let result = CoreDataManager.shared.getItems()
+        switch result {
+        case .success(let items):
+            let items = items.map({MovieCellViewModel(movie: $0)})
+            self.movies.accept(items)
+        case .failure(let error):
+            print("Error: \(error.localizedDescription)")
+        }
     }
 }
 

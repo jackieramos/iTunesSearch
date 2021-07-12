@@ -51,4 +51,36 @@ extension CoreDataManager {
             return .failure(AppError.failed(error))
         }
     }
+    
+    /// Mark item as favorite
+    ///
+    /// - Parameters:
+    ///   - trackId: item's trackId
+    ///   - isFavorite: true if user marks the item as favorite, false if user unfavorited the item
+    func markItem(with trackId: Int64, asFavorite: Bool) -> Result<Item, AppError> {
+        let context = self.container.viewContext
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: K.CoreDataEntity.item)
+        
+        var storeItem: Item!
+
+        fetchRequest.predicate = NSPredicate(format: "\(K.APIParameterKey.trackId) = %@", argumentArray: [trackId])
+
+        do {
+            let results = try context.fetch(fetchRequest) as? [Item]
+            if let item = results?.first {
+                item.setValue(asFavorite, forKey: K.APIParameterKey.isFavorite)
+                storeItem = item
+            }
+        } catch {
+            print("Fetch Failed: \(error)")
+        }
+
+        do {
+            try context.save()
+            return .success(storeItem)
+        } catch {
+            print("Saving Core Data Failed: \(error)")
+            return .failure(AppError.failed(error))
+        }
+    }
 }

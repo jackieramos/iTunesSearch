@@ -24,9 +24,9 @@ class ItemTableViewCell: BaseTableViewCell {
     override func bind(cellViewModel: BaseCellViewModel) {
         guard let itemCellViewModel = cellViewModel as? ItemTableViewCellModel else { return }
         
-        self.artworkImageView.kf.setImage(with: itemCellViewModel.artworkImageUrl, placeholder: UIImage(named: "placeholder"), options: nil, completionHandler: nil)
+        self.artworkImageView.kf.setImage(with: itemCellViewModel.artworkUrl, placeholder: itemCellViewModel.placeholderImage, options: nil, completionHandler: nil)
         self.trackNameLabel.text = itemCellViewModel.title
-        self.priceLabel.text = itemCellViewModel.formattedPrice
-        self.genreLabel.text = itemCellViewModel.genre
+        self.priceLabel.text = itemCellViewModel.subTitle
+        self.genreLabel.text = itemCellViewModel.item.genre
     }
 }
