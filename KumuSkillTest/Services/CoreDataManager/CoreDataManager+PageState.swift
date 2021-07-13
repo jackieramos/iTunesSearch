@@ -8,7 +8,31 @@
 import CoreData
 
 extension CoreDataManager {
-    ///Get page visit data from Core Data
+    ///Get all page states
+    func getAllPageSate() -> Result<[PageState], AppError> {
+        let fetchRequest =
+            NSFetchRequest<PageState>(entityName: K.CoreDataEntity.pageState)
+        
+        do {
+            let results = try self.container.viewContext.fetch(fetchRequest)
+            var pageStates: [PageState] = []
+            
+            for state in results {
+                if let viewModelData = state.value(forKey: K.APIParameterKey.viewModel) as? Data {
+                    let viewModel = try? NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(viewModelData) as? [[String : Any]]
+                    state.viewModel = viewModel ?? []
+                    pageStates.append(state)
+                }
+            }
+            return .success(pageStates)
+        } catch let error as NSError {
+            return .failure(AppError.failed(error))
+        }
+    }
+
+    ///Get last state of specific page from Core Data
+    /// - Parameters:
+    ///   - pageId: the pageId that will be queried against
     func getPageSate(pageId: Int16) -> Result<PageState, AppError> {
         let fetchRequest = NSFetchRequest<PageState>(entityName: K.CoreDataEntity.pageState)
         fetchRequest.predicate = NSPredicate(format: "\(K.APIParameterKey.pageId) = %@", argumentArray: [pageId])
@@ -50,11 +74,11 @@ extension CoreDataManager {
                 item.setValue(page.lastVisitedDate, forKeyPath: K.APIParameterKey.lastVisitedDate)
                 item.setValue(viewModelObject, forKey: K.APIParameterKey.viewModel)
             } else {
-                let item = NSManagedObject(entity: entity, insertInto: managedContext)
+                let newState = NSManagedObject(entity: entity, insertInto: managedContext)
 
-                item.setValue(page.pageId, forKey: K.APIParameterKey.pageId)
-                item.setValue(page.lastVisitedDate, forKeyPath: K.APIParameterKey.lastVisitedDate)
-                item.setValue(viewModelObject, forKey: K.APIParameterKey.viewModel)
+                newState.setValue(page.pageId, forKey: K.APIParameterKey.pageId)
+                newState.setValue(page.lastVisitedDate, forKeyPath: K.APIParameterKey.lastVisitedDate)
+                newState.setValue(viewModelObject, forKey: K.APIParameterKey.viewModel)
             }
         } catch {
             print("Fetch Failed: \(error)")

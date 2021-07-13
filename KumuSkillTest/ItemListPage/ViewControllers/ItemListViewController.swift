@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import RxCocoa
+import RxSwift
 
 class ItemListViewController: UIViewController {
 
@@ -26,7 +28,8 @@ class ItemListViewController: UIViewController {
         self.setupUI()
         self.registerNib()
         self.bindData()
-        self.viewModel.getLastState()
+        self.viewModel.getAllPageLastState()
+//        self.viewModel.saveLastState()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -63,12 +66,41 @@ class ItemListViewController: UIViewController {
     
     ///Data binding
     private func bindData() {
+        self.bindItems()
+        self.bindLastPageState()
+    }
+    
+    private func bindItems() {
         self.viewModel.movies
             .asObservable()
             .subscribe(onNext: { [unowned self] _ in
                 DispatchQueue.main.async {
                     self.moviesTableView.reloadData()
                     self.addLastVisitedView()
+                }
+            })
+            .disposed(by: self.viewModel.disposeBag)
+    }
+    
+    private func bindLastPageState() {
+        self.viewModel.lastPageIndex
+            .asObservable()
+            .subscribe(onNext: { [unowned self] _ in
+                DispatchQueue.main.async {
+                    switch self.viewModel.lastPageIndex.value {
+                    case 0:
+                        self.viewModel.getLastState()
+                    case 1:
+                        if let itemDict = self.viewModel.pageStates[1].viewModel.first, let item = Item(dictionary: itemDict) {
+                            let itemDetailVc = ItemDetailViewController.instantiate(fromAppStoryboard: .main)
+                            itemDetailVc.viewModel = ItemDetailViewModel(item: ItemTableViewCellModel(item: item))
+                            self.navigationController?.pushViewController(itemDetailVc, animated: true)
+                        }
+                    case 2:
+                        break
+                    default:
+                        break
+                    }
                 }
             })
             .disposed(by: self.viewModel.disposeBag)

@@ -12,6 +12,9 @@ import RxSwift
 class ItemListViewModel {
     
     var movies: BehaviorRelay<[MovieCellViewModel]> = BehaviorRelay(value: [])
+    var lastPageIndex: BehaviorRelay<Int> = BehaviorRelay(value: 0)
+    
+    var pageStates: [PageState] = []
     var pageState: PageState!
     
     let disposeBag = DisposeBag()
@@ -47,6 +50,23 @@ extension ItemListViewModel {
 
 //MARK: - Core data call
 extension ItemListViewModel {
+    func getAllPageLastState() {
+        let result = CoreDataManager.shared.getAllPageSate()
+        switch result {
+        case .success(let pageStates):
+            self.pageStates = pageStates
+            let dates = pageStates.map({$0.lastVisitedDate}).compactMap { lastVisitedDateInString -> Date? in
+                return lastVisitedDateInString.toDate()
+            }
+            if dates.count > 0 {
+                let mostRecent = dates.reduce(dates[0], { $0.timeIntervalSince1970 > $1.timeIntervalSince1970 ? $0 : $1 } )
+                self.lastPageIndex.accept(dates.firstIndex(of: mostRecent) ?? 0)
+            }
+        case .failure(let error):
+            print("Error: \(error.localizedDescription)")
+        }
+    }
+    
     func getLastState() {
         let result = CoreDataManager.shared.getPageSate(pageId: AppPage.itemList.rawValue)
         switch result {
@@ -66,7 +86,7 @@ extension ItemListViewModel {
     
     func saveLastState() {
         let itemsArray = self.movies.value.map({$0.item.toDictionary})
-        let pageState = PageState(pageId: AppPage.itemList.rawValue, lastVisitedDate: Date().stringFormat("MM/dd/YY HH:mm a"), viewModel: itemsArray)
+        let pageState = PageState(pageId: AppPage.itemList.rawValue, lastVisitedDate: Date().stringFormat("MM/dd/YY hh:mm:ss a"), viewModel: itemsArray)
         let result = CoreDataManager.shared.savePageState(page: pageState)
         switch result {
         case .success(_):

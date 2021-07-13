@@ -15,3 +15,11 @@ extension Date {
         return dateString
     }
 }
+
+extension String {
+    func toDate() -> Date? {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MM/dd/YY hh:mm:ss a"
+        return dateFormatter.date(from: self)
+    }
+}

@@ -25,6 +25,7 @@ class ItemDetailViewController: UIViewController {
 
         self.setupUI()
         self.bindData()
+        self.viewModel.saveLastState()
     }
     
     ///Bind ViewModel - observe changes on viewModel.item
@@ -43,6 +44,7 @@ class ItemDetailViewController: UIViewController {
     private func setupUI() {
         //Add last visited view for showing last visited label
         let lastVisitedView: LastVisitedView = LastVisitedView.fromNib()
+        lastVisitedView.bind(self.viewModel.pageState?.lastVisitedDate ?? "")
         self.lastVisitedContainerView.addSubview(lastVisitedView)
         
         lastVisitedView.translatesAutoresizingMaskIntoConstraints = false

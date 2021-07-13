@@ -11,7 +11,8 @@ import RxSwift
 
 class ItemDetailViewModel {
     var item: BehaviorRelay<ItemTableViewCellModel>!
-    
+    var pageState: PageState!
+
     let disposeBag = DisposeBag()
     
     init(item: ItemTableViewCellModel) {
@@ -30,8 +31,25 @@ extension ItemDetailViewModel {
         switch result {
         case .success(let item):
             self.item.accept(ItemTableViewCellModel(item: item))
+            self.saveLastState()
         case .failure(let error):
             print("Error: \(error)")
+        }
+    }
+}
+
+//MARK: - Core data call
+extension ItemDetailViewModel {
+    ///Save last state of item detail page
+    func saveLastState() {
+        let itemDict = self.item.value.item.toDictionary
+        let pageState = PageState(pageId: AppPage.itemDetail.rawValue, lastVisitedDate: Date().stringFormat("MM/dd/YY hh:mm:ss a"), viewModel: [itemDict])
+        let result = CoreDataManager.shared.savePageState(page: pageState)
+        switch result {
+        case .success(_):
+            print("Success saving state")
+        case .failure(let error):
+            print("Error saving state: \(error.localizedDescription)")
         }
     }
 }
